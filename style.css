@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+/*font-family: 'Inter', sans-serif*/
+
+/* ---------- Global ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+	background-color: black;
+	font-family: 'Inter', sans-serif;
+}
+
+h1 {
+	margin: 30px auto;
+	color: white;
+}
+
+
+/* ---------- Tasks insertion area ---------- */
+.input-discard {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 90%;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+input {
+	height: 40px;
+	padding: 10px;
+	width: 50%;
+	border: outset 3px #d5d5d5;
+}
+
+.discard {
+	position: absolute;
+	right: 0;
+	width: 35px;
+}
+
+.show-hide-tasks {
+	align-self: start;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+	color: white;
+	cursor: pointer;
+}
+
+.task-insertion-area {
+	display: flex;
+		align-items: center;
+		flex-direction: column;
+	width: 100%;
+}
+
+.inserted-tasks {
+	display: flex;
+		flex-wrap: wrap;
+	height: 200px;
+	margin-bottom: 20px;
+	padding: 10px;
+	width: 90%;
+	border: outset 2px white;
+	color: white;
+	overflow: auto;
+}
+
+.show-hide-toggle {
+	display: none;
+}
+
+/* ---------- Task classification area ---------- */
+.task-classification {
+	display: flex;
+		justify-content: space-between;
+		gap: 20px;
+	min-height: 550px;
+	width: 90%;
+}
+
+.importance {
+	display: flex;
+		flex-direction: column;
+	padding: 10px;
+	width: 100%;
+	border: outset 3px white;
+}
+
+.urgent {
+	background-color: rgb(204, 89, 89);
+}
+
+.normal {
+	background-color: rgb(241 245 169);
+}
+
+.no-hurry {
+	background-color: rgb(113 160 170);
+}
+
+.in-charge {
+	height: 25%;
+	margin: 5px 0;
+	padding: 5px;
+	background-color: #ffffff54;
+	border: 1px solid #000000;
+}
+
+.task-list {
+	display: flex;
+		flex-wrap: wrap;
+	height: 80%;
+	width: 100%;
+	overflow: auto;
+}
+
+
+/* ---------- Tasks inserted ---------- */
+.task-element {
+	display: flex;
+		align-items: center;
+	margin: 4px;
+	max-width: 100%;
+	padding: 5px;
+}
+
+/* ---------- Completed tasks ---------- */
+.completed-tasks {
+	margin: 20px auto;
+	height: 200px;
+	padding: 10px;
+	width: 90%;
+    background-color: rgb(144 213 144);
+    border: outset 3px white;
+	overflow: auto;
+}
+
+.completed-tasks-list {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+
+/* ---------- Media queries ---------- */
+@media (max-width: 700px) {
+
+	.task-classification {
+		flex-direction: column;
+	}
+
+	.in-charge {
+		min-height: 100px;
+	}
+
+	.input-discard {
+		justify-content: start;
+	}
+
+	input {
+		width: 60%;
+	}
+	
+}
