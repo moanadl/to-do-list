@@ -1,36 +1,30 @@
 <!DOCTYPE html>
-
-<html lang="pt-BR">
+!
+<html lang="en">
 
     <head>
-
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Classificação de Tarefas</title>
+        <title>To-do list</title>
         <link rel="stylesheet" href="style.css">
-
     </head>
 
     <body>
 
-        <h1>Classificação de tarefas</h1>
-
+        <h1>To-do list</h1>
+        
         <div class="task-insertion-area">
             
             <div class="input-discard">
-                <input type="text" id="new-task" placeholder="Digite uma tarefa...">
-
+                <input type="text" id="new-task" placeholder="Enter a new task...">
                 <img class="discard" src="./images/discard.png" alt="">
-
             </div>
 
             <details class="show-hide-tasks">
-                <summary>Mostrar/Esconder tarefas não classificadas</summary>
+                <summary>Show/hide inserted tasks</summary>
             </details>
 
-            <div class="inserted-tasks" id="inserted-tasks">
-            <!-- <p class="tarefa-criada" draggable="true">Exemplo</p> -->   
-            </div>
+            <div class="inserted-tasks" id="inserted-tasks"></div>
 
         </div>
 
@@ -38,96 +32,72 @@
 
             <div class="importance urgent">
 
-                <div class="in-charge dad">
-                    <h3>Pai</h3>
-                    
+                <div class="in-charge one">
+                    <h3>In charge 1</h3>
                     <div class="task-list"></div>
-
                 </div>
 
-                <div class="in-charge mom">
-                    <h3>Mãe</h3>
-                    
-                    <div class="task-list"></div>
-                    
+                <div class="in-charge two">
+                    <h3>In charge 2</h3>
+                    <div class="task-list"></div>    
                 </div>
 
-                <div class="in-charge moa">
-                    <h3>Moa</h3>
-                    
+                <div class="in-charge three">
+                    <h3>In charge 3</h3>  
                     <div class="task-list"></div>
-                    
                 </div>
 
                 <div class="in-charge everybody">
-                    <h3>Todos</h3>
-                    
-                    <div class="task-list"></div>
-                    
+                    <h3>Everybody</h3>
+                    <div class="task-list"></div>  
                 </div>
 
             </div>
 
             <div class="importance normal">
 
-                <div class="in-charge dad">
-                    <h3>Pai</h3>
-                    
+                <div class="in-charge one">
+                    <h3>In charge 1</h3>
                     <div class="task-list"></div>
-
                 </div>
 
-                <div class="in-charge mom">
-                    <h3>Mãe</h3>
-                    
-                    <div class="task-list"></div>
-                    
+                <div class="in-charge two">
+                    <h3>In charge 2</h3>                    
+                    <div class="task-list"></div>                    
                 </div>
 
-                <div class="in-charge moa">
-                    <h3>Moa</h3>
-                    
-                    <div class="task-list"></div>
-                    
+                <div class="in-charge three">
+                    <h3>In charge 3</h3>                    
+                    <div class="task-list"></div>                    
                 </div>
 
                 <div class="in-charge everybody">
-                    <h3>Todos</h3>
-                    
-                    <div class="task-list"></div>
-                    
+                    <h3>Everybody</h3>                    
+                    <div class="task-list"></div>                    
                 </div>
 
             </div>
 
             <div class="importance no-hurry">
 
-                <div class="in-charge dad">
-                    <h3>Pai</h3>
-                    
+                <div class="in-charge one">
+                    <h3>In charge 1</h3>                    
                     <div class="task-list"></div>
-
                 </div>
 
-                <div class="in-charge mom">
-                    <h3>Mãe</h3>
-                    
-                    <div class="task-list"></div>
-                    
+                <div class="in-charge two">
+                    <h3>In charge 2</h3>                    
+                    <div class="task-list"></div>                    
                 </div>
 
-                <div class="in-charge moa">
-                    <h3>Moa</h3>
-                    
-                    <div class="task-list"></div>
-                    
+                <div class="in-charge three">
+                    <h3>In charge 3</h3>                    
+                    <div class="task-list"></div>                    
                 </div>
 
                 <div class="in-charge everybody">
-                    <h3>Todos</h3>
-                    
-                    <div class="task-list"></div>
-                    
+                    <h3>Everybody</h3>                    
+                    <div class="task-list"></div>                    
                 </div>
                 
             </div>
@@ -135,11 +105,8 @@
         </div>
 
         <div class="completed-tasks">
-            <h3>Tarefas concluídas</h3>
-
-            <div class="completed-tasks-list">
-            </div>
-            
+            <h3>Completed tasks</h3>
+            <div class="completed-tasks-list"></div>
         </div>
 
         <script src="app.js"></script>

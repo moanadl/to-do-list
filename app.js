@@ -25,40 +25,40 @@ for (let i = 0; i < Object.keys(tasksTotal).length; i++) {
 	if (tasksTotal[i].classification === 'unclassified') {
 		createTask(tasksTotal[i].task)
 		insertedTasks.appendChild(taskItem);;
-	} else if (tasksTotal[i].classification === 'urgent' && tasksTotal[i].inCharge === 'pai') {
+	} else if (tasksTotal[i].classification === 'urgent' && tasksTotal[i].inCharge === 'inChargeOne') {
 		createTask(tasksTotal[i].task)
 		taskList[0].appendChild(taskItem);
-	} else if (tasksTotal[i].classification === 'urgent' && tasksTotal[i].inCharge === 'mae') {
+	} else if (tasksTotal[i].classification === 'urgent' && tasksTotal[i].inCharge === 'inChargeTwo') {
 		createTask(tasksTotal[i].task)
 		taskList[1].appendChild(taskItem);
-	} else if (tasksTotal[i].classification === 'urgent' && tasksTotal[i].inCharge === 'moa') {
+	} else if (tasksTotal[i].classification === 'urgent' && tasksTotal[i].inCharge === 'inChargeThree') {
 		createTask(tasksTotal[i].task)
 		taskList[2].appendChild(taskItem);
-	} else if (tasksTotal[i].classification === 'urgent' && tasksTotal[i].inCharge === 'todos') {
+	} else if (tasksTotal[i].classification === 'urgent' && tasksTotal[i].inCharge === 'everybody') {
 		createTask(tasksTotal[i].task)
 		taskList[3].appendChild(taskItem);
-	} else if (tasksTotal[i].classification === 'normal' && tasksTotal[i].inCharge === 'pai') {
+	} else if (tasksTotal[i].classification === 'normal' && tasksTotal[i].inCharge === 'inChargeOne') {
 		createTask(tasksTotal[i].task)
 		taskList[4].appendChild(taskItem);
-	} else if (tasksTotal[i].classification === 'normal' && tasksTotal[i].inCharge === 'mae') {
+	} else if (tasksTotal[i].classification === 'normal' && tasksTotal[i].inCharge === 'inChargeTwo') {
 		createTask(tasksTotal[i].task)
 		taskList[5].appendChild(taskItem);
-	} else if (tasksTotal[i].classification === 'normal' && tasksTotal[i].inCharge === 'moa') {
+	} else if (tasksTotal[i].classification === 'normal' && tasksTotal[i].inCharge === 'inChargeThree') {
 		createTask(tasksTotal[i].task)
 		taskList[6].appendChild(taskItem);
-	} else if (tasksTotal[i].classification === 'normal' && tasksTotal[i].inCharge === 'todos') {
+	} else if (tasksTotal[i].classification === 'normal' && tasksTotal[i].inCharge === 'everybody') {
 		createTask(tasksTotal[i].task)
 		taskList[7].appendChild(taskItem);
-	} else if (tasksTotal[i].classification === 'no-hurry' && tasksTotal[i].inCharge === 'pai') {
+	} else if (tasksTotal[i].classification === 'no-hurry' && tasksTotal[i].inCharge === 'inChargeOne') {
 		createTask(tasksTotal[i].task)
 		taskList[8].appendChild(taskItem);
-	} else if (tasksTotal[i].classification === 'no-hurry' && tasksTotal[i].inCharge === 'mae') {
+	} else if (tasksTotal[i].classification === 'no-hurry' && tasksTotal[i].inCharge === 'inChargeTwo') {
 		createTask(tasksTotal[i].task)
 		taskList[9].appendChild(taskItem);
-	} else if (tasksTotal[i].classification === 'no-hurry' && tasksTotal[i].inCharge === 'moa') {
+	} else if (tasksTotal[i].classification === 'no-hurry' && tasksTotal[i].inCharge === 'inChargeThree') {
 		createTask(tasksTotal[i].task)
 		taskList[10].appendChild(taskItem);
-	} else if (tasksTotal[i].classification === 'no-hurry' && tasksTotal[i].inCharge === 'todos') {
+	} else if (tasksTotal[i].classification === 'no-hurry' && tasksTotal[i].inCharge === 'everybody') {
 		createTask(tasksTotal[i].task)
 		taskList[11].appendChild(taskItem);
 	} else if (tasksTotal[i].classification === 'completed') {
@@ -88,7 +88,7 @@ function createTask (text) {
 // ----- By pressing the 'enter' key after typing the task in the input it will call the function 'addingTask' -----
 input.addEventListener('keydown', addingTask);
 
-// ----- Creates an element for the new task and displays it in the page -----
+// ----- Creates an element for the new task and displays it on the page -----
 function addingTask (e) {
 
 	if (e.key === 'Enter') {
@@ -101,7 +101,7 @@ function addingTask (e) {
 
 		// --- Storing the task input ---
 		taskInput = input.value;
-		// --- Calling the function the will create the new task element ---
+		// --- Calling the function that will create the new task element ---
 		createTask (taskInput);
 		// --- Appeding the element to the task board ---
 		insertedTasks.appendChild(taskItem);
@@ -132,7 +132,7 @@ function startDragging (e) {
 	elementBeingDragged = e.target;
 }
 
-// ----- Adding the event listeners for the elements that will received the dragged elements to call the functions 'dragOver' and 'dragDrop' -----
+// ----- Adding the event listeners for the elements that will receive the dragged elements to call the functions 'dragOver' and 'dragDrop' -----
 taskList.forEach(inCharge => {
 	inCharge.addEventListener('dragover', dragOver)
 });
@@ -164,32 +164,32 @@ function dragDrop (e) {
 	tasksTotal.splice(objectIndex, 1);
 
 	if (e.target.parentElement.parentElement.classList.contains('urgent')) {
-		if (e.target.parentElement.classList.contains('dad')) {
+		if (e.target.parentElement.classList.contains('one')) {
 			
 			currentTask = {
 				'task': `${elementBeingDragged.innerHTML}`,
 				'classification': 'urgent',
-				'inCharge': 'pai'
+				'inCharge': 'inChargeOne'
 			}
 
 			tasksTotal.push(currentTask);
 
-		} else if (e.target.parentElement.classList.contains('mom')) {
+		} else if (e.target.parentElement.classList.contains('two')) {
 			
 			currentTask = {
 				'task': `${elementBeingDragged.innerHTML}`,
 				'classification': 'urgent',
-				'inCharge': 'mae'
+				'inCharge': 'inChargeTwo'
 			}
 
 			tasksTotal.push(currentTask);
 			
-		} else if (e.target.parentElement.classList.contains('moa')) {
+		} else if (e.target.parentElement.classList.contains('three')) {
 			
 			currentTask = {
 				'task': `${elementBeingDragged.innerHTML}`,
 				'classification': 'urgent',
-				'inCharge': 'moa'
+				'inCharge': 'inChargeThree'
 			}
 
 			tasksTotal.push(currentTask);
@@ -199,7 +199,7 @@ function dragDrop (e) {
 			currentTask = {
 				'task': `${elementBeingDragged.innerHTML}`,
 				'classification': 'urgent',
-				'inCharge': 'todos'
+				'inCharge': 'everybody'
 			}
 
 			tasksTotal.push(currentTask);
@@ -207,32 +207,32 @@ function dragDrop (e) {
 		}
 	} else if (e.target.parentElement.parentElement.classList.contains('normal')) {
 
-		if (e.target.parentElement.classList.contains('dad')) {
+		if (e.target.parentElement.classList.contains('one')) {
 			
 			currentTask = {
 				'task': `${elementBeingDragged.innerHTML}`,
 				'classification': 'normal',
-				'inCharge': 'pai'
+				'inCharge': 'inChargeOne'
 			}
 
 			tasksTotal.push(currentTask);
 
-		} else if (e.target.parentElement.classList.contains('mom')) {
+		} else if (e.target.parentElement.classList.contains('two')) {
 			
 			currentTask = {
 				'task': `${elementBeingDragged.innerHTML}`,
 				'classification': 'normal',
-				'inCharge': 'mae'
+				'inCharge': 'inChargeTwo'
 			}
 
 			tasksTotal.push(currentTask);
 			
-		} else if (e.target.parentElement.classList.contains('moa')) {
+		} else if (e.target.parentElement.classList.contains('three')) {
 			
 			currentTask = {
 				'task': `${elementBeingDragged.innerHTML}`,
 				'classification': 'normal',
-				'inCharge': 'moa'
+				'inCharge': 'inChargeThree'
 			}
 
 			tasksTotal.push(currentTask);
@@ -242,7 +242,7 @@ function dragDrop (e) {
 			currentTask = {
 				'task': `${elementBeingDragged.innerHTML}`,
 				'classification': 'normal',
-				'inCharge': 'todos'
+				'inCharge': 'everybody'
 			}
 
 			tasksTotal.push(currentTask);
@@ -250,32 +250,32 @@ function dragDrop (e) {
 		}
 	} else if (e.target.parentElement.parentElement.classList.contains('no-hurry')) {
 
-		if (e.target.parentElement.classList.contains('dad')) {
+		if (e.target.parentElement.classList.contains('one')) {
 
 			currentTask = {
 				'task': `${elementBeingDragged.innerHTML}`,
 				'classification': 'no-hurry',
-				'inCharge': 'pai'
+				'inCharge': 'inChargeOne'
 			}
 
 			tasksTotal.push(currentTask);
 
-		} else if (e.target.parentElement.classList.contains('mom')) {
+		} else if (e.target.parentElement.classList.contains('two')) {
 			
 			currentTask = {
 				'task': `${elementBeingDragged.innerHTML}`,
 				'classification': 'no-hurry',
-				'inCharge': 'mae'
+				'inCharge': 'inChargeTwo'
 			}
 
 			tasksTotal.push(currentTask);
 			
-		} else if (e.target.parentElement.classList.contains('moa')) {
+		} else if (e.target.parentElement.classList.contains('three')) {
 			
 			currentTask = {
 				'task': `${elementBeingDragged.innerHTML}`,
 				'classification': 'no-hurry',
-				'inCharge': 'moa'
+				'inCharge': 'inChargeThree'
 			}
 
 			tasksTotal.push(currentTask);
@@ -285,13 +285,13 @@ function dragDrop (e) {
 			currentTask = {
 				'task': `${elementBeingDragged.innerHTML}`,
 				'classification': 'no-hurry',
-				'inCharge': 'todos'
+				'inCharge': 'everybody'
 			}
 
 			tasksTotal.push(currentTask);
 			
 		}
-	} else if (e.target.classList.contains('completed-tasks')) {
+	} else if (e.target.parentElement.classList.contains('completed-tasks')) {
 		currentTask = {
 			'task': `${elementBeingDragged.innerHTML}`,
 			'classification': 'completed',
